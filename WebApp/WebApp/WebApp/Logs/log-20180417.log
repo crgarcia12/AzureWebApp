@@ -1,0 +1,1095 @@
+2018-04-17T17:06:59.1763540+02:00  [INF] Starting @angular/cli on port 52635... (4d07a819)
+2018-04-17T17:06:59.9103269+02:00  [ERR] 'npm' is not recognized as an internal or external command,
+ (b128ddc8)
+2018-04-17T17:07:00.9278846+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=WebApp " (9958f5bb)
+2018-04-17T17:07:11.6202796+02:00  [INF] Executed DbCommand ("366"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""CREATE DATABASE [WebApp];" (0723d8ff)
+2018-04-17T17:07:11.7533413+02:00  [INF] Executed DbCommand ("128"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [WebApp] SET READ_COMMITTED_SNAPSHOT ON;');" (0723d8ff)
+2018-04-17T17:07:11.8725235+02:00  [INF] Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);" (0723d8ff)
+2018-04-17T17:07:11.9316595+02:00  [INF] Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T17:07:11.9664131+02:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-04-17T17:07:12.0321723+02:00  [INF] Applying migration '"20180301170309_Initial"'. (0e2ac64d)
+2018-04-17T17:07:12.2281594+02:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AppCustomers] (
+    [Id] int NOT NULL IDENTITY,
+    [Address] nvarchar(max) NULL,
+    [City] nvarchar(50) NULL,
+    [CreatedBy] nvarchar(256) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [DateCreated] datetime2 NOT NULL,
+    [DateModified] datetime2 NOT NULL,
+    [Email] nvarchar(100) NULL,
+    [Gender] int NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [PhoneNumber] varchar(30) NULL,
+    [UpdatedBy] nvarchar(256) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AppCustomers] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-04-17T17:07:12.2580631+02:00  [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AppProductCategories] (
+    [Id] int NOT NULL IDENTITY,
+    [CreatedBy] nvarchar(256) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [DateCreated] datetime2 NOT NULL,
+    [DateModified] datetime2 NOT NULL,
+    [Description] nvarchar(500) NULL,
+    [Icon] nvarchar(max) NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [UpdatedBy] nvarchar(256) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AppProductCategories] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-04-17T17:07:12.3073794+02:00  [INF] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-04-17T17:07:12.3460303+02:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [Configuration] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [Email] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [FullName] nvarchar(max) NULL,
+    [IsEnabled] bit NOT NULL,
+    [JobTitle] nvarchar(max) NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-04-17T17:07:12.3749110+02:00  [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [OpenIddictApplications] (
+    [Id] nvarchar(450) NOT NULL,
+    [ClientId] nvarchar(450) NOT NULL,
+    [ClientSecret] nvarchar(max) NULL,
+    [ConcurrencyToken] nvarchar(max) NULL,
+    [ConsentType] nvarchar(max) NULL,
+    [DisplayName] nvarchar(max) NULL,
+    [Permissions] nvarchar(max) NULL,
+    [PostLogoutRedirectUris] nvarchar(max) NULL,
+    [Properties] nvarchar(max) NULL,
+    [RedirectUris] nvarchar(max) NULL,
+    [Type] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_OpenIddictApplications] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-04-17T17:07:12.4082584+02:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [OpenIddictScopes] (
+    [Id] nvarchar(450) NOT NULL,
+    [ConcurrencyToken] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [DisplayName] nvarchar(max) NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Properties] nvarchar(max) NULL,
+    [Resources] nvarchar(max) NULL,
+    CONSTRAINT [PK_OpenIddictScopes] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-04-17T17:07:12.4521518+02:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AppProducts] (
+    [Id] int NOT NULL IDENTITY,
+    [BuyingPrice] decimal(18, 2) NOT NULL,
+    [CreatedBy] nvarchar(256) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [DateCreated] datetime2 NOT NULL,
+    [DateModified] datetime2 NOT NULL,
+    [Description] nvarchar(500) NULL,
+    [Icon] varchar(256) NULL,
+    [IsActive] bit NOT NULL,
+    [IsDiscontinued] bit NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [ParentId] int NULL,
+    [ProductCategoryId] int NOT NULL,
+    [SellingPrice] decimal(18, 2) NOT NULL,
+    [UnitsInStock] int NOT NULL,
+    [UpdatedBy] nvarchar(256) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AppProducts] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AppProducts_AppProducts_ParentId] FOREIGN KEY ([ParentId]) REFERENCES [AppProducts] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AppProducts_AppProductCategories_ProductCategoryId] FOREIGN KEY ([ProductCategoryId]) REFERENCES [AppProductCategories] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.4896466+02:00  [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.5373478+02:00  [INF] Executed DbCommand ("45"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AppOrders] (
+    [Id] int NOT NULL IDENTITY,
+    [CashierId] nvarchar(450) NULL,
+    [Comments] nvarchar(500) NULL,
+    [CreatedBy] nvarchar(256) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [CustomerId] int NOT NULL,
+    [DateCreated] datetime2 NOT NULL,
+    [DateModified] datetime2 NOT NULL,
+    [Discount] decimal(18, 2) NOT NULL,
+    [UpdatedBy] nvarchar(256) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AppOrders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AppOrders_AspNetUsers_CashierId] FOREIGN KEY ([CashierId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AppOrders_AppCustomers_CustomerId] FOREIGN KEY ([CustomerId]) REFERENCES [AppCustomers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.5707429+02:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.6000637+02:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.6282655+02:00  [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.6550915+02:00  [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.6880825+02:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [OpenIddictAuthorizations] (
+    [Id] nvarchar(450) NOT NULL,
+    [ApplicationId] nvarchar(450) NULL,
+    [ConcurrencyToken] nvarchar(max) NULL,
+    [Properties] nvarchar(max) NULL,
+    [Scopes] nvarchar(max) NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [Subject] nvarchar(max) NOT NULL,
+    [Type] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_OpenIddictAuthorizations] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_OpenIddictAuthorizations_OpenIddictApplications_ApplicationId] FOREIGN KEY ([ApplicationId]) REFERENCES [OpenIddictApplications] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-04-17T17:07:12.7333602+02:00  [INF] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AppOrderDetails] (
+    [Id] int NOT NULL IDENTITY,
+    [CreatedBy] nvarchar(256) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [Discount] decimal(18, 2) NOT NULL,
+    [OrderId] int NOT NULL,
+    [ProductId] int NOT NULL,
+    [Quantity] int NOT NULL,
+    [UnitPrice] decimal(18, 2) NOT NULL,
+    [UpdatedBy] nvarchar(256) NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AppOrderDetails] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AppOrderDetails_AppOrders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [AppOrders] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AppOrderDetails_AppProducts_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [AppProducts] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-04-17T17:07:12.7768789+02:00  [INF] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [OpenIddictTokens] (
+    [Id] nvarchar(450) NOT NULL,
+    [ApplicationId] nvarchar(450) NULL,
+    [AuthorizationId] nvarchar(450) NULL,
+    [ConcurrencyToken] nvarchar(max) NULL,
+    [CreationDate] datetimeoffset NULL,
+    [ExpirationDate] datetimeoffset NULL,
+    [Payload] nvarchar(max) NULL,
+    [Properties] nvarchar(max) NULL,
+    [ReferenceId] nvarchar(450) NULL,
+    [Status] nvarchar(max) NULL,
+    [Subject] nvarchar(max) NOT NULL,
+    [Type] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_OpenIddictTokens] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_OpenIddictTokens_OpenIddictApplications_ApplicationId] FOREIGN KEY ([ApplicationId]) REFERENCES [OpenIddictApplications] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_OpenIddictTokens_OpenIddictAuthorizations_AuthorizationId] FOREIGN KEY ([AuthorizationId]) REFERENCES [OpenIddictAuthorizations] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-04-17T17:07:12.8052383+02:00  [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppCustomers_Name] ON [AppCustomers] ([Name]);" (0723d8ff)
+2018-04-17T17:07:12.8501815+02:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppOrderDetails_OrderId] ON [AppOrderDetails] ([OrderId]);" (0723d8ff)
+2018-04-17T17:07:12.8886602+02:00  [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppOrderDetails_ProductId] ON [AppOrderDetails] ([ProductId]);" (0723d8ff)
+2018-04-17T17:07:12.9397705+02:00  [INF] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppOrders_CashierId] ON [AppOrders] ([CashierId]);" (0723d8ff)
+2018-04-17T17:07:12.9852348+02:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppOrders_CustomerId] ON [AppOrders] ([CustomerId]);" (0723d8ff)
+2018-04-17T17:07:13.0152818+02:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppProducts_Name] ON [AppProducts] ([Name]);" (0723d8ff)
+2018-04-17T17:07:13.0638000+02:00  [INF] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppProducts_ParentId] ON [AppProducts] ([ParentId]);" (0723d8ff)
+2018-04-17T17:07:13.1166321+02:00  [INF] Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AppProducts_ProductCategoryId] ON [AppProducts] ([ProductCategoryId]);" (0723d8ff)
+2018-04-17T17:07:13.1706655+02:00  [INF] Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);" (0723d8ff)
+2018-04-17T17:07:13.2024538+02:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;" (0723d8ff)
+2018-04-17T17:07:13.2322960+02:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);" (0723d8ff)
+2018-04-17T17:07:13.2642743+02:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);" (0723d8ff)
+2018-04-17T17:07:13.2958666+02:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);" (0723d8ff)
+2018-04-17T17:07:13.3213776+02:00  [INF] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);" (0723d8ff)
+2018-04-17T17:07:13.3552633+02:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;" (0723d8ff)
+2018-04-17T17:07:13.3973721+02:00  [INF] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [IX_OpenIddictApplications_ClientId] ON [OpenIddictApplications] ([ClientId]);" (0723d8ff)
+2018-04-17T17:07:13.4390662+02:00  [INF] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_OpenIddictAuthorizations_ApplicationId] ON [OpenIddictAuthorizations] ([ApplicationId]);" (0723d8ff)
+2018-04-17T17:07:13.4717552+02:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [IX_OpenIddictScopes_Name] ON [OpenIddictScopes] ([Name]);" (0723d8ff)
+2018-04-17T17:07:13.5055210+02:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_OpenIddictTokens_ApplicationId] ON [OpenIddictTokens] ([ApplicationId]);" (0723d8ff)
+2018-04-17T17:07:13.6654801+02:00  [INF] Executed DbCommand ("153"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_OpenIddictTokens_AuthorizationId] ON [OpenIddictTokens] ([AuthorizationId]);" (0723d8ff)
+2018-04-17T17:07:13.8596460+02:00  [INF] Executed DbCommand ("165"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [IX_OpenIddictTokens_ReferenceId] ON [OpenIddictTokens] ([ReferenceId]) WHERE [ReferenceId] IS NOT NULL;" (0723d8ff)
+2018-04-17T17:07:13.9328989+02:00  [INF] Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20180301170309_Initial', N'2.0.1-rtm-125');" (0723d8ff)
+2018-04-17T17:07:14.2515733+02:00  [INF] Executed DbCommand ("70"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T17:07:14.2995233+02:00  [INF] Generating inbuilt accounts (d5983574)
+2018-04-17T17:07:14.4550014+02:00  [INF] Executed DbCommand ("86"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:14.5526047+02:00  [INF] Executed DbCommand ("63"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:14.7620493+02:00  [INF] Executed DbCommand ("56"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?', @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [CreatedBy], [CreatedDate], [Description], [Name], [NormalizedName], [UpdatedBy], [UpdatedDate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2018-04-17T17:07:14.8086071+02:00  [INF] Executed DbCommand ("35"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:14.9342114+02:00  [INF] Executed DbCommand ("77"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.0081601+02:00  [INF] Executed DbCommand ("47"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p9='?' (Size = 450), @p3='?' (Size = 4000), @p10='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoleClaims] ([ClaimType], [ClaimValue], [RoleId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoleClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [AspNetRoles] SET [ConcurrencyStamp] = @p3, [Description] = @p4, [Name] = @p5, [NormalizedName] = @p6, [UpdatedBy] = @p7, [UpdatedDate] = @p8
+WHERE [Id] = @p9 AND [ConcurrencyStamp] = @p10;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:15.1230735+02:00  [INF] Executed DbCommand ("83"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.2389919+02:00  [INF] Executed DbCommand ("110"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p9='?' (Size = 450), @p3='?' (Size = 4000), @p10='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoleClaims] ([ClaimType], [ClaimValue], [RoleId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoleClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [AspNetRoles] SET [ConcurrencyStamp] = @p3, [Description] = @p4, [Name] = @p5, [NormalizedName] = @p6, [UpdatedBy] = @p7, [UpdatedDate] = @p8
+WHERE [Id] = @p9 AND [ConcurrencyStamp] = @p10;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:15.3011113+02:00  [INF] Executed DbCommand ("56"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.3592168+02:00  [INF] Executed DbCommand ("53"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p9='?' (Size = 450), @p3='?' (Size = 4000), @p10='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoleClaims] ([ClaimType], [ClaimValue], [RoleId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoleClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [AspNetRoles] SET [ConcurrencyStamp] = @p3, [Description] = @p4, [Name] = @p5, [NormalizedName] = @p6, [UpdatedBy] = @p7, [UpdatedDate] = @p8
+WHERE [Id] = @p9 AND [ConcurrencyStamp] = @p10;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:15.4234525+02:00  [INF] Executed DbCommand ("57"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.4822084+02:00  [INF] Executed DbCommand ("54"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p9='?' (Size = 450), @p3='?' (Size = 4000), @p10='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoleClaims] ([ClaimType], [ClaimValue], [RoleId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoleClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [AspNetRoles] SET [ConcurrencyStamp] = @p3, [Description] = @p4, [Name] = @p5, [NormalizedName] = @p6, [UpdatedBy] = @p7, [UpdatedDate] = @p8
+WHERE [Id] = @p9 AND [ConcurrencyStamp] = @p10;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:15.5400183+02:00  [INF] Executed DbCommand ("52"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.6152065+02:00  [INF] Executed DbCommand ("70"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p9='?' (Size = 450), @p3='?' (Size = 4000), @p10='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoleClaims] ([ClaimType], [ClaimValue], [RoleId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoleClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [AspNetRoles] SET [ConcurrencyStamp] = @p3, [Description] = @p4, [Name] = @p5, [NormalizedName] = @p6, [UpdatedBy] = @p7, [UpdatedDate] = @p8
+WHERE [Id] = @p9 AND [ConcurrencyStamp] = @p10;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:15.6745432+02:00  [INF] Executed DbCommand ("54"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.7304122+02:00  [INF] Executed DbCommand ("52"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:15.8018964+02:00  [INF] Executed DbCommand ("61"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?', @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (Size = 256), @p7='?' (Size = 4000), @p8='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [CreatedBy], [CreatedDate], [Description], [Name], [NormalizedName], [UpdatedBy], [UpdatedDate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);" (0723d8ff)
+2018-04-17T17:07:15.8720937+02:00  [INF] Executed DbCommand ("65"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T17:07:16.0734050+02:00  [INF] Executed DbCommand ("113"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T17:07:16.1424819+02:00  [INF] Executed DbCommand ("52"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2018-04-17T17:07:16.4023700+02:00  [INF] Executed DbCommand ("209"ms) [Parameters=["@p0='?' (Size = 450), @p1='?', @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 256), @p7='?', @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?', @p12='?', @p13='?' (Size = 256), @p14='?' (Size = 256), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?', @p18='?' (Size = 4000), @p19='?', @p20='?' (Size = 4000), @p21='?', @p22='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Configuration], [CreatedBy], [CreatedDate], [Email], [EmailConfirmed], [FullName], [IsEnabled], [JobTitle], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UpdatedBy], [UpdatedDate], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);" (0723d8ff)
+2018-04-17T17:07:16.6862942+02:00  [INF] Executed DbCommand ("279"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T17:07:16.7682037+02:00  [INF] Executed DbCommand ("62"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2018-04-17T17:07:16.8525314+02:00  [INF] Executed DbCommand ("63"ms) [Parameters=["@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)" (0723d8ff)
+2018-04-17T17:07:16.9316106+02:00  [INF] Executed DbCommand ("71"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2018-04-17T17:07:17.0052605+02:00  [INF] Executed DbCommand ("59"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T17:07:17.0766716+02:00  [INF] Executed DbCommand ("65"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2018-04-17T17:07:17.2227508+02:00  [INF] Executed DbCommand ("136"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p22='?' (Size = 450), @p2='?', @p3='?' (Size = 4000), @p23='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?', @p7='?' (Size = 4000), @p8='?', @p9='?' (Size = 4000), @p10='?', @p11='?', @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?', @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 4000), @p20='?', @p21='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Configuration] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FullName] = @p7, [IsEnabled] = @p8, [JobTitle] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UpdatedBy] = @p19, [UpdatedDate] = @p20, [UserName] = @p21
+WHERE [Id] = @p22 AND [ConcurrencyStamp] = @p23;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:17.3078811+02:00  [INF] Executed DbCommand ("71"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T17:07:17.3949134+02:00  [INF] Executed DbCommand ("82"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2018-04-17T17:07:17.4864874+02:00  [INF] Executed DbCommand ("85"ms) [Parameters=["@p0='?' (Size = 450), @p1='?', @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 256), @p7='?', @p8='?' (Size = 4000), @p9='?', @p10='?' (Size = 4000), @p11='?', @p12='?', @p13='?' (Size = 256), @p14='?' (Size = 256), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?', @p18='?' (Size = 4000), @p19='?', @p20='?' (Size = 4000), @p21='?', @p22='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Configuration], [CreatedBy], [CreatedDate], [Email], [EmailConfirmed], [FullName], [IsEnabled], [JobTitle], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UpdatedBy], [UpdatedDate], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);" (0723d8ff)
+2018-04-17T17:07:17.5682882+02:00  [INF] Executed DbCommand ("77"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T17:07:17.6412188+02:00  [INF] Executed DbCommand ("69"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2018-04-17T17:07:17.7096474+02:00  [INF] Executed DbCommand ("62"ms) [Parameters=["@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)" (0723d8ff)
+2018-04-17T17:07:17.7735235+02:00  [INF] Executed DbCommand ("60"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2018-04-17T17:07:17.8409447+02:00  [INF] Executed DbCommand ("63"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T17:07:17.9120738+02:00  [INF] Executed DbCommand ("67"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2018-04-17T17:07:18.0181736+02:00  [INF] Executed DbCommand ("98"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p22='?' (Size = 450), @p2='?', @p3='?' (Size = 4000), @p23='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?', @p7='?' (Size = 4000), @p8='?', @p9='?' (Size = 4000), @p10='?', @p11='?', @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?', @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 4000), @p20='?', @p21='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Configuration] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FullName] = @p7, [IsEnabled] = @p8, [JobTitle] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UpdatedBy] = @p19, [UpdatedDate] = @p20, [UserName] = @p21
+WHERE [Id] = @p22 AND [ConcurrencyStamp] = @p23;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2018-04-17T17:07:18.0234565+02:00  [INF] Inbuilt account generation completed (a663d88d)
+2018-04-17T17:07:18.1234882+02:00  [INF] Executed DbCommand ("82"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppCustomers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T17:07:18.1983204+02:00  [INF] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppProductCategories] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T17:07:18.2174364+02:00  [INF] Seeding initial data (13b66d8a)
+2018-04-17T17:07:18.2261493+02:00  [WRN] Query: '"(from ApplicationUser <generated>_1 in DbSet<ApplicationUser> select [<generated>_1]).First()"' uses First/FirstOrDefault operation without OrderBy and filter which may lead to unpredictable results. (e99f2322)
+2018-04-17T17:07:18.3090290+02:00  [INF] Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Configuration], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsEnabled], [a].[JobTitle], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedBy], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]" (0723d8ff)
+2018-04-17T17:07:18.4650235+02:00  [INF] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Configuration], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsEnabled], [a].[JobTitle], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedBy], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]" (0723d8ff)
+2018-04-17T17:07:18.8423450+02:00  [INF] Executed DbCommand ("117"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 50), @p2='?' (Size = 256), @p3='?', @p4='?', @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?' (Size = 100), @p9='?' (Size = 30), @p10='?' (Size = 256), @p11='?', @p12='?' (Size = 4000), @p13='?' (Size = 50), @p14='?' (Size = 256), @p15='?', @p16='?', @p17='?', @p18='?' (Size = 100), @p19='?', @p20='?' (Size = 100), @p21='?' (Size = 30), @p22='?' (Size = 256), @p23='?', @p24='?' (Size = 4000), @p25='?' (Size = 50), @p26='?' (Size = 256), @p27='?', @p28='?', @p29='?', @p30='?' (Size = 100), @p31='?', @p32='?' (Size = 100), @p33='?' (Size = 30), @p34='?' (Size = 256), @p35='?', @p36='?' (Size = 4000), @p37='?' (Size = 50), @p38='?' (Size = 256), @p39='?', @p40='?', @p41='?', @p42='?' (Size = 100), @p43='?', @p44='?' (Size = 100), @p45='?' (Size = 30), @p46='?' (Size = 256), @p47='?', @p48='?' (Size = 256), @p49='?', @p50='?', @p51='?', @p52='?' (Size = 500), @p53='?' (Size = 4000), @p54='?' (Size = 100), @p55='?' (Size = 256), @p56='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AppCustomers] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, 0),
+(@p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 1),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, 2),
+(@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, 3)) AS i ([Address], [City], [CreatedBy], [CreatedDate], [DateCreated], [DateModified], [Email], [Gender], [Name], [PhoneNumber], [UpdatedBy], [UpdatedDate], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Address], [City], [CreatedBy], [CreatedDate], [DateCreated], [DateModified], [Email], [Gender], [Name], [PhoneNumber], [UpdatedBy], [UpdatedDate])
+VALUES (i.[Address], i.[City], i.[CreatedBy], i.[CreatedDate], i.[DateCreated], i.[DateModified], i.[Email], i.[Gender], i.[Name], i.[PhoneNumber], i.[UpdatedBy], i.[UpdatedDate])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AppCustomers] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+INSERT INTO [AppProductCategories] ([CreatedBy], [CreatedDate], [DateCreated], [DateModified], [Description], [Icon], [Name], [UpdatedBy], [UpdatedDate])
+VALUES (@p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, @p56);
+SELECT [Id]
+FROM [AppProductCategories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2018-04-17T17:07:18.9458071+02:00  [INF] Executed DbCommand ("87"ms) [Parameters=["@p57='?' (Size = 450), @p58='?' (Size = 500), @p59='?' (Size = 256), @p60='?', @p61='?', @p62='?', @p63='?', @p64='?', @p65='?' (Size = 256), @p66='?', @p67='?' (Size = 450), @p68='?' (Size = 500), @p69='?' (Size = 256), @p70='?', @p71='?', @p72='?', @p73='?', @p74='?', @p75='?' (Size = 256), @p76='?', @p77='?', @p78='?' (Size = 256), @p79='?', @p80='?', @p81='?', @p82='?' (Size = 500), @p83='?' (Size = 256), @p84='?', @p85='?', @p86='?' (Size = 100), @p87='?', @p88='?', @p89='?', @p90='?', @p91='?' (Size = 256), @p92='?', @p93='?', @p94='?' (Size = 256), @p95='?', @p96='?', @p97='?', @p98='?' (Size = 500), @p99='?' (Size = 256), @p100='?', @p101='?', @p102='?' (Size = 100), @p103='?', @p104='?', @p105='?', @p106='?', @p107='?' (Size = 256), @p108='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AppOrders] USING (
+VALUES (@p57, @p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, 0),
+(@p67, @p68, @p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76, 1)) AS i ([CashierId], [Comments], [CreatedBy], [CreatedDate], [CustomerId], [DateCreated], [DateModified], [Discount], [UpdatedBy], [UpdatedDate], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CashierId], [Comments], [CreatedBy], [CreatedDate], [CustomerId], [DateCreated], [DateModified], [Discount], [UpdatedBy], [UpdatedDate])
+VALUES (i.[CashierId], i.[Comments], i.[CreatedBy], i.[CreatedDate], i.[CustomerId], i.[DateCreated], i.[DateModified], i.[Discount], i.[UpdatedBy], i.[UpdatedDate])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AppOrders] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+DECLARE @inserted2 TABLE ([Id] int, [_Position] [int]);
+MERGE [AppProducts] USING (
+VALUES (@p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, @p88, @p89, @p90, @p91, @p92, 0),
+(@p93, @p94, @p95, @p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, @p104, @p105, @p106, @p107, @p108, 1)) AS i ([BuyingPrice], [CreatedBy], [CreatedDate], [DateCreated], [DateModified], [Description], [Icon], [IsActive], [IsDiscontinued], [Name], [ParentId], [ProductCategoryId], [SellingPrice], [UnitsInStock], [UpdatedBy], [UpdatedDate], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([BuyingPrice], [CreatedBy], [CreatedDate], [DateCreated], [DateModified], [Description], [Icon], [IsActive], [IsDiscontinued], [Name], [ParentId], [ProductCategoryId], [SellingPrice], [UnitsInStock], [UpdatedBy], [UpdatedDate])
+VALUES (i.[BuyingPrice], i.[CreatedBy], i.[CreatedDate], i.[DateCreated], i.[DateModified], i.[Description], i.[Icon], i.[IsActive], i.[IsDiscontinued], i.[Name], i.[ParentId], i.[ProductCategoryId], i.[SellingPrice], i.[UnitsInStock], i.[UpdatedBy], i.[UpdatedDate])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted2;
+
+SELECT [t].[Id] FROM [AppProducts] t
+INNER JOIN @inserted2 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];" (0723d8ff)
+2018-04-17T17:07:19.0004855+02:00  [INF] Executed DbCommand ("45"ms) [Parameters=["@p109='?' (Size = 256), @p110='?', @p111='?', @p112='?', @p113='?', @p114='?', @p115='?', @p116='?' (Size = 256), @p117='?', @p118='?' (Size = 256), @p119='?', @p120='?', @p121='?', @p122='?', @p123='?', @p124='?', @p125='?' (Size = 256), @p126='?', @p127='?' (Size = 256), @p128='?', @p129='?', @p130='?', @p131='?', @p132='?', @p133='?', @p134='?' (Size = 256), @p135='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AppOrderDetails] USING (
+VALUES (@p109, @p110, @p111, @p112, @p113, @p114, @p115, @p116, @p117, 0),
+(@p118, @p119, @p120, @p121, @p122, @p123, @p124, @p125, @p126, 1),
+(@p127, @p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, 2)) AS i ([CreatedBy], [CreatedDate], [Discount], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedBy], [UpdatedDate], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CreatedBy], [CreatedDate], [Discount], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedBy], [UpdatedDate])
+VALUES (i.[CreatedBy], i.[CreatedDate], i.[Discount], i.[OrderId], i.[ProductId], i.[Quantity], i.[UnitPrice], i.[UpdatedBy], i.[UpdatedDate])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AppOrderDetails] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];" (0723d8ff)
+2018-04-17T17:07:19.0058393+02:00  [INF] Seeding initial data completed (dcd778dd)
+2018-04-17T17:07:19.4653849+02:00 0HLD4EJL0R96O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T17:07:20.5360730+02:00 0HLD4EJL0R96O:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: )) ---> System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: ) ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was:  ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.<WithTimeout>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.<PerformProxyRequest>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+---> (Inner Exception #0) System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: ) ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was:  ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+---> (Inner Exception #0) System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was:  ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()<---
+<---
+
+2018-04-17T17:07:20.8361988+02:00 0HLD4EJL0R96O:00000001 [INF] Request finished in 1284.1023ms 500 text/html; charset=utf-8 (791a596a)
+2018-04-17T17:07:20.9085124+02:00 0HLD4EJL0R96O:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/favicon.ico   (ca22a1cb)
+2018-04-17T17:07:20.9224256+02:00 0HLD4EJL0R96O:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\WebApp\wwwroot\favicon.ico"' (27b0a520)
+2018-04-17T17:07:20.9420067+02:00 0HLD4EJL0R96O:00000002 [INF] Request finished in 31.484ms 200 image/x-icon (791a596a)
+2018-04-17T17:15:00.8884992+02:00  [INF] Starting @angular/cli on port 50346... (40789f71)
+2018-04-17T17:15:01.9768519+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=WebApp " (9958f5bb)
+2018-04-17T17:15:05.7051707+02:00  [ERR] 'ng' is not recognized as an internal or external command,
+ (11f6b5a5)
+2018-04-17T17:15:05.7791818+02:00  [ERR] operable program or batch file.
+npm ERR! code ELIFECYCLE
+ (50fce170)
+2018-04-17T17:15:06.4719101+02:00  [INF] Executed DbCommand ("286"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T17:15:06.5221259+02:00  [INF] Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T17:15:06.5717785+02:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-04-17T17:15:06.6447270+02:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2018-04-17T17:15:06.9395102+02:00  [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T17:15:07.0382208+02:00  [INF] Executed DbCommand ("66"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppCustomers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T17:15:07.6058191+02:00 0HLD4EO0HOIO5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T17:15:08.2580326+02:00 0HLD4EO0HOIO5:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+)) ---> System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+) ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.<WithTimeout>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.<PerformProxyRequest>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+---> (Inner Exception #0) System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+) ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+---> (Inner Exception #0) System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()<---
+<---
+
+2018-04-17T17:15:08.6732739+02:00 0HLD4EO0HOIO5:00000001 [INF] Request finished in 838.5227ms 500 text/html; charset=utf-8 (791a596a)
+2018-04-17T17:15:08.7280302+02:00 0HLD4EO0HOIO5:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/favicon.ico   (ca22a1cb)
+2018-04-17T17:15:08.7565594+02:00 0HLD4EO0HOIO5:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\WebApp\wwwroot\favicon.ico"' (27b0a520)
+2018-04-17T17:15:08.8935294+02:00 0HLD4EO0HOIO5:00000002 [INF] Request finished in 59.4587ms 200 image/x-icon (791a596a)
+2018-04-17T17:17:35.7586088+02:00 0HLD4EO0HOIO6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T17:17:36.0189264+02:00 0HLD4EO0HOIO6:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+)) ---> System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+) ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.<WithTimeout>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.<PerformProxyRequest>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+---> (Inner Exception #0) System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+) ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+---> (Inner Exception #0) System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: 'ng' is not recognized as an internal or external command,
+
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<StartAngularCliServerAsync>d__3.MoveNext()<---
+<---
+
+2018-04-17T17:17:36.3997042+02:00 0HLD4EO0HOIO6:00000001 [INF] Request finished in 541.5966ms 500 text/html; charset=utf-8 (791a596a)
+2018-04-17T21:24:48.1790167+02:00  [INF] Starting @angular/cli on port 65109... (c5726647)
+2018-04-17T21:24:48.8705737+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=WebApp " (9958f5bb)
+2018-04-17T21:24:57.9147886+02:00  [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T21:24:57.9367610+02:00  [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T21:24:57.9655397+02:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-04-17T21:24:57.9966501+02:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2018-04-17T21:24:58.5032616+02:00  [INF] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T21:24:58.5379548+02:00  [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppCustomers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T21:24:58.9856647+02:00 0HLD4J3KA9PHM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T21:25:14.3905275+02:00  [INF] > quickapp@2.5.3 start C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\WebApp\ClientApp
+> ng serve --extract-css "--port" "65109"
+
+** NG Live Development Server is listening on localhost:65109, open your browser on http://localhost:65109/ **
+ (10742ee6)
+2018-04-17T21:25:27.8668366+02:00  [INF] webpack: wait until bundle finished: /
+ (4d787c36)
+2018-04-17T21:25:38.1683730+02:00 0HLD4J3KA9PHN:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T21:25:45.3060567+02:00  [INF] webpack: wait until bundle finished: /
+ (4d787c36)
+2018-04-17T21:25:45.7243365+02:00  [INF] Date: 2018-04-17T19:25:45.722Z
+ (adf58e14)
+2018-04-17T21:25:46.1467564+02:00  [INF] Hash: 2125a331223c1025ef15
+Time: 31151ms
+chunk {inline} inline.bundle.js (inline) 3.85 kB [entry] [rendered]
+chunk {main} main.bundle.js (main) 1.44 MB [initial] [rendered]
+chunk {polyfills} polyfills.bundle.js (polyfills) 676 kB [initial] [rendered]
+chunk {scripts} scripts.bundle.js (scripts) 291 kB [initial] [rendered]
+chunk {styles} styles.bundle.css (styles) 293 kB [initial] [rendered]
+chunk {vendor} vendor.bundle.js (vendor) 15.8 MB [initial] [rendered]
+
+ (a5265540)
+2018-04-17T21:25:46.1468709+02:00  [INF] webpack: Compiled successfully.
+ (f274984e)
+2018-04-17T21:25:46.1769814+02:00 0HLD4J3KA9PHN:00000001 [INF] Request finished in 8008.3473ms 200 text/html; charset=UTF-8 (791a596a)
+2018-04-17T21:25:46.1769814+02:00 0HLD4J3KA9PHM:00000001 [INF] Request finished in 47199.6792ms 200 text/html; charset=UTF-8 (791a596a)
+2018-04-17T21:25:46.3851437+02:00 0HLD4J3KA9PHM:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/inline.bundle.js   (ca22a1cb)
+2018-04-17T21:25:46.3987795+02:00 0HLD4J3KA9PHN:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/styles.bundle.css   (ca22a1cb)
+2018-04-17T21:25:46.4004722+02:00 0HLD4J3KA9PHO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/scripts.bundle.js   (ca22a1cb)
+2018-04-17T21:25:46.4004722+02:00 0HLD4J3KA9PHP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/polyfills.bundle.js   (ca22a1cb)
+2018-04-17T21:25:46.4417576+02:00 0HLD4J3KA9PHR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/assets/styles-external.css   (ca22a1cb)
+2018-04-17T21:25:46.4543239+02:00 0HLD4J3KA9PHQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/vendor.bundle.js   (ca22a1cb)
+2018-04-17T21:25:46.7726904+02:00 0HLD4J3KA9PHO:00000001 [INF] Request finished in 372.1899ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:25:46.7766549+02:00 0HLD4J3KA9PHR:00000001 [INF] Request finished in 334.9864ms 200 text/css; charset=UTF-8 (791a596a)
+2018-04-17T21:25:46.8268374+02:00 0HLD4J3KA9PHR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/main.bundle.js   (ca22a1cb)
+2018-04-17T21:25:47.1124899+02:00 0HLD4J3KA9PHR:00000002 [INF] Request finished in 285.6611ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:25:47.8588518+02:00 0HLD4J3KA9PHM:00000002 [INF] Request finished in 1473.7982ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:25:47.8650159+02:00 0HLD4J3KA9PHN:00000002 [INF] Request finished in 1465.9317ms 200 text/css; charset=UTF-8 (791a596a)
+2018-04-17T21:25:47.8752807+02:00 0HLD4J3KA9PHP:00000001 [INF] Request finished in 1474.7626ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:25:50.8383486+02:00 0HLD4J3KA9PHQ:00000001 [INF] Request finished in 4383.9294ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:25:57.6504126+02:00 0HLD4J3KA9PHO:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/glyphicons-halflings-regular.448c34a56d699c29117a.woff2   (ca22a1cb)
+2018-04-17T21:25:58.1248538+02:00 0HLD4J3KA9PHR:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:52120/sockjs-node/info?t=1523993158046   (ca22a1cb)
+2018-04-17T21:25:58.8132865+02:00 0HLD4J3KA9PHO:00000002 [INF] Request finished in 1163.0348ms 200 font/woff2; charset=UTF-8 (791a596a)
+2018-04-17T21:25:58.9530677+02:00 0HLD4J3KA9PHM:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:52120/favicon.ico   (ca22a1cb)
+2018-04-17T21:25:58.9560489+02:00 0HLD4J3KA9PHM:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\WebApp\wwwroot\favicon.ico"' (27b0a520)
+2018-04-17T21:25:58.9734050+02:00 0HLD4J3KA9PHM:00000003 [INF] Request finished in 20.3315ms 200 image/x-icon (791a596a)
+2018-04-17T21:25:59.2202533+02:00 0HLD4J3KA9PHR:00000003 [INF] Request finished in 1095.4356ms 200 application/json; charset=UTF-8 (791a596a)
+2018-04-17T21:25:59.2594689+02:00 0HLD4J3KA9PHN:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:52120/sockjs-node/247/d4n4tg14/websocket   (ca22a1cb)
+2018-04-17T21:25:59.2602452+02:00 0HLD4J3KA9PHN:00000003 [INF] Policy execution successful. (0204925d)
+2018-04-17T21:28:31.6516069+02:00 0HLD4J3KA9PHT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/fontawesome-webfont.af7ae505a9eed503f8b8.woff2?v=4.7.0   (ca22a1cb)
+2018-04-17T21:28:31.6518877+02:00 0HLD4J3KA9PHS:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:52120/connect/token application/x-www-form-urlencoded 151 (ca22a1cb)
+2018-04-17T21:28:31.7879728+02:00 0HLD4J3KA9PHS:00000001 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\",
+  \"resource\": \"http://localhost:52120\"
+}". (ebc01284)
+2018-04-17T21:28:31.8438690+02:00 0HLD4J3KA9PHS:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2018-04-17T21:28:32.0122079+02:00 0HLD4J3KA9PHS:00000001 [INF] Executing action method "WebApp.Controllers.AuthorizationController.Exchange (WebApp)" with arguments (["{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\",
+  \"resource\": \"http://localhost:52120\"
+}"]) - ModelState is Valid (ba7f4ac2)
+2018-04-17T21:28:32.0216982+02:00 0HLD4J3KA9PHS:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=WebApp " (9958f5bb)
+2018-04-17T21:28:32.1826064+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("96"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2018-04-17T21:28:32.2030180+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-04-17T21:28:32.3304024+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-04-17T21:28:32.3885414+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-04-17T21:28:32.4074085+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-04-17T21:28:32.4374105+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-04-17T21:28:32.4540722+02:00 0HLD4J3KA9PHS:00000001 [INF] Executing SignInResult with authentication scheme ("ASOS") and the following principal: "System.Security.Claims.ClaimsPrincipal". (f8bf0a82)
+2018-04-17T21:28:32.6633021+02:00 0HLD4J3KA9PHT:00000001 [INF] Request finished in 1011.7103ms 200 font/woff2; charset=UTF-8 (791a596a)
+2018-04-17T21:28:32.7250889+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [OpenIddictAuthorizations] ([Id], [ApplicationId], [ConcurrencyToken], [Properties], [Scopes], [Status], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);" (0723d8ff)
+2018-04-17T21:28:32.7314025+02:00 0HLD4J3KA9PHS:00000001 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "5992e4cc-a7b0-4d4a-90df-838d25d0f189". (b5fe4ad7)
+2018-04-17T21:28:32.9364712+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 450), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [OpenIddictTokens] ([Id], [ApplicationId], [AuthorizationId], [ConcurrencyToken], [CreationDate], [ExpirationDate], [Payload], [Properties], [ReferenceId], [Status], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);" (0723d8ff)
+2018-04-17T21:28:32.9912470+02:00 0HLD4J3KA9PHS:00000001 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-04-17T21:28:33.0390554+02:00 0HLD4J3KA9PHS:00000001 [INF] Executed action "WebApp.Controllers.AuthorizationController.Exchange (WebApp)" in 1060.4013ms (afa2e885)
+2018-04-17T21:28:33.0633826+02:00 0HLD4J3KA9PHS:00000001 [INF] Request finished in 1411.3996ms 200 application/json;charset=UTF-8 (791a596a)
+2018-04-17T21:28:33.6292908+02:00 0HLD4J3KA9PHT:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/banner2.c2ec6b8ac2a6443487f7.png   (ca22a1cb)
+2018-04-17T21:28:33.6428314+02:00 0HLD4J3KA9PHT:00000002 [INF] Request finished in 13.5343ms 200 image/png; charset=UTF-8 (791a596a)
+2018-04-17T21:28:53.0603439+02:00 0HLD4J3KA9PHT:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:52120/quickapp-standard.ba781b77c5b942938978.png   (ca22a1cb)
+2018-04-17T21:28:53.0603398+02:00 0HLD4J3KA9PHS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/quickapp-pro.11195c57ed9408121df9.png   (ca22a1cb)
+2018-04-17T21:28:54.0687175+02:00 0HLD4J3KA9PHS:00000002 [INF] Request finished in 1008.4125ms 200 image/png; charset=UTF-8 (791a596a)
+2018-04-17T21:28:54.0704183+02:00 0HLD4J3KA9PHT:00000003 [INF] Request finished in 1010.1216ms 200 image/png; charset=UTF-8 (791a596a)
+2018-04-17T21:30:44.3569054+02:00 0HLD4J3KA9PHU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T21:30:44.4493639+02:00 0HLD4J3KA9PHN:00000003 [INF] Request finished in 285189.8498ms 101  (791a596a)
+2018-04-17T21:30:45.3709222+02:00 0HLD4J3KA9PHU:00000001 [INF] Request finished in 1013.9974ms 200 text/html; charset=UTF-8 (791a596a)
+2018-04-17T21:30:45.5790189+02:00 0HLD4J3KA9PHU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/sockjs-node/info?t=1523993445480   (ca22a1cb)
+2018-04-17T21:30:45.5848994+02:00 0HLD4J3KA9PHU:00000002 [INF] Request finished in 5.9834ms 200 application/json; charset=UTF-8 (791a596a)
+2018-04-17T21:30:45.6229408+02:00 0HLD4J3KA9PHU:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:52120/sockjs-node/690/fprse140/websocket   (ca22a1cb)
+2018-04-17T21:30:45.6240008+02:00 0HLD4J3KA9PHU:00000003 [INF] Policy execution successful. (0204925d)
+2018-04-17T21:30:45.9928305+02:00 0HLD4J3KA9PHV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)
+2018-04-17T21:30:45.9962564+02:00 0HLD4J3KA9PI0:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:52120/sockjs-node/690/gvizy2r1/xhr_streaming?t=1523993445964  0 (ca22a1cb)
+2018-04-17T21:30:45.9964251+02:00 0HLD4J3KA9PHV:00000001 [INF] Request finished in 3.6217ms 200 text/html; charset=UTF-8 (791a596a)
+2018-04-17T21:30:46.1165964+02:00 0HLD4J3KA9PI0:00000001 [INF] Request finished in 120.3683ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:30:46.1405480+02:00 0HLD4J3KA9PHV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/assets/styles-external.css   (ca22a1cb)
+2018-04-17T21:30:46.1672276+02:00 0HLD4J3KA9PI1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/styles.bundle.css   (ca22a1cb)
+2018-04-17T21:30:46.1760851+02:00 0HLD4J3KA9PI2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/inline.bundle.js   (ca22a1cb)
+2018-04-17T21:30:46.2091924+02:00 0HLD4J3KA9PI3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/polyfills.bundle.js   (ca22a1cb)
+2018-04-17T21:30:46.2394144+02:00 0HLD4J3KA9PI4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/scripts.bundle.js   (ca22a1cb)
+2018-04-17T21:30:46.2723386+02:00 0HLD4J3KA9PI5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/vendor.bundle.js   (ca22a1cb)
+2018-04-17T21:30:46.7347726+02:00 0HLD4J3KA9PHU:00000003 [INF] Request finished in 1111.9369ms 101  (791a596a)
+2018-04-17T21:30:47.1970197+02:00 0HLD4J3KA9PHV:00000002 [INF] Request finished in 1056.4434ms 304  (791a596a)
+2018-04-17T21:30:47.2231813+02:00 0HLD4J3KA9PHV:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:52120/main.bundle.js   (ca22a1cb)
+2018-04-17T21:30:47.2364673+02:00 0HLD4J3KA9PI1:00000001 [INF] Request finished in 1069.2753ms 304  (791a596a)
+2018-04-17T21:30:47.2384953+02:00 0HLD4J3KA9PI2:00000001 [INF] Request finished in 1062.4798ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:30:47.2522518+02:00 0HLD4J3KA9PHV:00000003 [INF] Request finished in 29.1168ms 304  (791a596a)
+2018-04-17T21:30:47.2745727+02:00 0HLD4J3KA9PI3:00000001 [INF] Request finished in 1065.3696ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:30:47.3320252+02:00 0HLD4J3KA9PI4:00000001 [INF] Request finished in 1092.3037ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:30:48.4907905+02:00 0HLD4J3KA9PI5:00000001 [INF] Request finished in 2220.8527ms 200 application/javascript; charset=UTF-8 (791a596a)
+2018-04-17T21:30:54.4906350+02:00 0HLD4J3KA9PI1:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/banner2.c2ec6b8ac2a6443487f7.png   (ca22a1cb)
+2018-04-17T21:30:55.0290893+02:00 0HLD4J3KA9PHV:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:52120/sockjs-node/info?t=1523993454994   (ca22a1cb)
+2018-04-17T21:30:55.5046845+02:00 0HLD4J3KA9PI1:00000002 [INF] Request finished in 1014.1706ms 304  (791a596a)
+2018-04-17T21:30:56.0352933+02:00 0HLD4J3KA9PHV:00000004 [INF] Request finished in 1006.4449ms 200 application/json; charset=UTF-8 (791a596a)
+2018-04-17T21:30:56.0557861+02:00 0HLD4J3KA9PI2:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:52120/sockjs-node/259/off1iyhb/websocket   (ca22a1cb)
+2018-04-17T21:30:56.0559507+02:00 0HLD4J3KA9PI2:00000002 [INF] Policy execution successful. (0204925d)
+2018-04-17T21:32:28.8373128+02:00  [INF] Starting @angular/cli on port 65422... (db802b6b)
+2018-04-17T21:32:29.6039919+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=WebApp " (9958f5bb)
+2018-04-17T21:32:31.5780426+02:00  [INF] Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T21:32:31.5885785+02:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-04-17T21:32:31.5959282+02:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-04-17T21:32:31.6136455+02:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2018-04-17T21:32:31.8171016+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T21:32:31.8434400+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppCustomers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-04-17T21:32:32.2693294+02:00 0HLD4J7RE0OUE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:52120/   (ca22a1cb)

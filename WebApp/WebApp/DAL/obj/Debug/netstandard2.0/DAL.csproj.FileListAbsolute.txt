@@ -1,0 +1,9 @@
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\obj\Debug\netstandard2.0\DAL.csprojResolveAssemblyReference.cache
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\gitrepos\github\crgarcia12\AzureWebApp\WebApp\WebApp\DAL\obj\Debug\netstandard2.0\DAL.pdb
